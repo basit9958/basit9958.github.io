@@ -3,286 +3,334 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basit Hasan | Platform Engineer | Go, Kubernetes, SRE</title>
-<meta name="description" content="Basit Hasan. Engineer @Obmondo. I run the Go services behind managed Kubernetes and Linux infrastructure for European enterprises. Leading a 7-engineer platform team. CNCF contributor, GSoC 2022, KubeAid maintainer.">
+<title>Basit - Platform Engineer | Go, Kubernetes, SRE | Obmondo</title>
+<meta name="description" content="Basit Hasan. Engineer @Obmondo. Running the Go services behind managed Kubernetes and Linux infrastructure. Leading a 7-engineer platform team. CNCF contributor, GSoC 2022, KubeAid maintainer.">
 <meta name="author" content="Basit Hasan">
-<meta property="og:title" content="Basit Hasan | Platform Engineer">
-<meta property="og:description" content="Engineer @Obmondo. 1,100+ commits on the API that runs the business. Team lead, CNCF contributor, GSoC 2022.">
+<meta property="og:title" content="Basit - Platform Engineer">
+<meta property="og:description" content="Engineer @Obmondo. 1,100+ commits on the API that runs the business. CNCF contributor, GSoC 2022.">
 <meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#050505; --panel:#0d0d0f; --line:#1c1c20; --line2:#2a2a30;
-    --text:#f2f2f0; --mut:#a3a3a0; --dim:#5c5c60;
-    --acc:#7cf29c; --acc2:#6ea8fe;
-    --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-    --disp:'Space Grotesk',sans-serif;
-    --mono:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --bg:#0c0e0c; --panel:#121412; --panel2:#161917; --line:#222622; --line2:#2c322c;
+    --text:#e9ece8; --mut:#9aa39a; --dim:#5f6a60;
+    --green:#4ade80; --green-dim:#2f6b47; --amber:#d97757; --blue:#7aa2f7;
+    --serif:'Instrument Serif',Georgia,serif;
+    --sans:'Inter',-apple-system,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px;position:relative}
+  .layout{display:grid;grid-template-columns:360px 1fr;gap:16px;max-width:1240px;margin:0 auto;padding:16px}
 
-  /* floating glyphs */
-  .glyphs{position:fixed;inset:0;pointer-events:none;z-index:0}
-  .glyphs span{position:absolute;font-family:var(--mono);color:var(--dim);opacity:.22;font-size:22px;animation:drift 14s ease-in-out infinite}
-  .glyphs span:nth-child(2){animation-delay:-3s}.glyphs span:nth-child(3){animation-delay:-6s}
-  .glyphs span:nth-child(4){animation-delay:-9s}.glyphs span:nth-child(5){animation-delay:-12s}
-  .glyphs span:nth-child(6){animation-delay:-5s}
-  @keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  /* ============ left sidebar ============ */
+  aside{position:sticky;top:16px;height:calc(100vh - 32px);min-height:640px;background:linear-gradient(180deg,#151815,#111311);border:1px solid var(--line);border-radius:20px;padding:34px 30px;display:flex;flex-direction:column;overflow:hidden}
+  .side-top{display:flex;justify-content:space-between;align-items:flex-start}
+  .name{font-family:var(--serif);font-size:34px;letter-spacing:.01em}
+  .moon{font-size:18px;opacity:.9}
+  .role{font-family:var(--serif);font-size:24px;margin-top:34px}
+  .role a{border-bottom:1px solid var(--dim);padding-bottom:1px}
+  .role a:hover{border-color:var(--green);color:var(--green)}
+  .desc{margin-top:18px;color:#c8cec6;font-size:15px}
+  .desc2{margin-top:12px;color:var(--dim);font-size:14px}
+  .touch{margin-top:34px}
+  .touch h3{font-family:var(--serif);font-size:19px;font-weight:400}
+  .touch p{color:var(--dim);font-size:13.5px;margin-top:6px}
+  .icons{display:flex;gap:10px;margin-top:14px}
+  .icons a{width:38px;height:38px;border:1px solid var(--line2);border-radius:10px;display:grid;place-items:center;color:var(--mut);font-family:var(--mono);font-size:15px;transition:all .2s}
+  .icons a:hover{color:var(--green);border-color:var(--green-dim);transform:translateY(-2px)}
+  .leds{display:flex;gap:4px;justify-content:center;margin-top:40px}
+  .leds i{width:9px;height:9px;border-radius:2px;background:#1c231c}
+  .leds i.on{background:var(--green);box-shadow:0 0 8px rgba(74,222,128,.5)}
+  .art{flex:1;position:relative;margin-top:20px;min-height:120px}
+  .art span{position:absolute;font-family:var(--mono);color:var(--green);opacity:.5;text-shadow:0 0 10px rgba(74,222,128,.4);animation:tw 5s ease-in-out infinite}
+  .art span:nth-child(odd){animation-delay:-2.4s}
+  @keyframes tw{0%,100%{opacity:.18}50%{opacity:.6}}
+  .side-foot{display:flex;justify-content:space-between;align-items:center;color:var(--dim);font-size:13px}
+  .side-foot img{width:26px;height:26px;border-radius:50%;border:1px solid var(--line2)}
 
-  nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(5,5,5,.75);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-  nav .logo{font-family:var(--disp);font-weight:700;letter-spacing:-.02em}
-  nav .logo em{color:var(--acc);font-style:normal}
-  nav ul{display:flex;gap:26px;list-style:none}
-  nav ul a{color:var(--mut);font-size:14px;transition:color .2s}
-  nav ul a:hover{color:var(--text)}
+  /* ============ right column ============ */
+  main{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;position:relative}
+  .plabel{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase}
+  .plabel.green{color:var(--green)}
+  .plabel.amber{color:var(--amber)}
+  .goarr{position:absolute;top:20px;right:20px;width:32px;height:32px;border:1px solid var(--line2);border-radius:9px;display:grid;place-items:center;color:var(--mut);font-size:14px}
+  a.panel:hover .goarr,.hero:hover .goarr{color:var(--green);border-color:var(--green-dim)}
 
-  header{position:relative;z-index:1;padding:110px 0 80px}
-  .hero{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
-  .kick{font-family:var(--mono);font-size:13px;color:var(--acc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
-  h1{font-family:var(--disp);font-size:clamp(48px,8vw,84px);line-height:.98;letter-spacing:-.03em;font-weight:700}
-  .role{font-family:var(--disp);font-size:clamp(20px,3vw,28px);margin-top:18px;color:var(--text)}
-  .role a{color:var(--acc);border-bottom:1px solid transparent}
-  .role a:hover{border-color:var(--acc)}
-  .lede{color:var(--mut);max-width:520px;margin-top:16px;font-size:17px}
-  .lede b{color:var(--text);font-weight:600}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-  .btn{font-size:14px;padding:12px 20px;border-radius:10px;border:1px solid var(--line2);background:var(--panel);transition:transform .15s,border-color .15s}
-  .btn:hover{transform:translateY(-2px);border-color:var(--acc)}
-  .btn.primary{background:var(--acc);border-color:var(--acc);color:#06230f;font-weight:600}
-  .portrait{justify-self:end;position:relative}
-  .portrait img{width:min(280px,60vw);aspect-ratio:1;border-radius:24px;object-fit:cover;border:1px solid var(--line2);filter:saturate(.9)}
-  .portrait::after{content:"go build ./...";position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:var(--dim);background:var(--bg);padding:2px 10px;border:1px solid var(--line);border-radius:99px;white-space:nowrap}
+  /* hero card */
+  .hero{display:block;background:radial-gradient(120% 140% at 85% 0%,rgba(217,119,87,.22),rgba(18,20,18,0) 55%),var(--panel);overflow:hidden}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:#e0b7a5;background:rgba(217,119,87,.12);border:1px solid rgba(217,119,87,.3);border-radius:99px;padding:4px 12px}
+  .badge i{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  .hero-head{display:flex;gap:16px;align-items:center;margin-top:26px}
+  .hero-ico{width:44px;height:44px;border-radius:12px;background:rgba(217,119,87,.14);border:1px solid rgba(217,119,87,.3);display:grid;place-items:center;font-size:19px}
+  .hero-meta{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
+  .hero-meta small{display:block;letter-spacing:.02em;text-transform:none;color:var(--dim);margin-top:2px;font-size:12px}
+  .hero h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:400;margin-top:16px}
+  .hero .sub{color:var(--mut);font-size:14.5px;margin-top:6px}
+  .hero .when{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px;font-family:var(--mono);font-size:12.5px;color:var(--mut)}
+  .hero .when b{color:var(--text);font-weight:500}
+  .hero .track{margin-top:10px;font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+  .hero .track a{color:var(--green)}
 
-  .numbers{position:relative;z-index:1;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
-  .numbers .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0}
-  .num{padding:28px 20px;border-left:1px solid var(--line)}
-  .num:first-child{border-left:none}
-  .num .v{font-family:var(--disp);font-size:34px;font-weight:700;color:var(--acc)}
-  .num .k{font-size:13px;color:var(--mut);margin-top:4px}
+  /* highlights */
+  .hl-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;border-top:1px solid var(--line)}
+  .hl{padding:22px 18px;border-bottom:1px solid var(--line);position:relative;display:block}
+  .hl:nth-child(odd){border-right:1px solid var(--line)}
+  .hl:nth-last-child(-n+2){border-bottom:none}
+  .hl:hover{background:var(--panel2)}
+  .hl-top{display:flex;gap:12px;align-items:center}
+  .hl-ico{width:36px;height:36px;border-radius:10px;background:rgba(74,222,128,.09);border:1px solid rgba(74,222,128,.22);display:grid;place-items:center;font-size:15px}
+  .hl h3{font-size:15px;font-weight:600}
+  .hl .vd{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-top:2px}
+  .hl p{color:var(--mut);font-size:13.5px;margin-top:12px}
+  .hl .chips{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--mut);background:var(--panel2);border:1px solid var(--line2);border-radius:6px;padding:3px 8px;text-transform:uppercase}
+  .hl .ext{position:absolute;top:18px;right:16px;color:var(--dim);font-size:13px}
 
-  section{position:relative;z-index:1;padding:88px 0}
-  section+section{border-top:1px solid var(--line)}
-  .sec-label{font-family:var(--mono);font-size:13px;color:var(--acc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
-  h2{font-family:var(--disp);font-size:clamp(28px,4.5vw,40px);letter-spacing:-.02em;margin-bottom:36px}
+  /* archive */
+  .archive{display:block;background:radial-gradient(130% 160% at 15% 0%,rgba(74,222,128,.13),rgba(18,20,18,0) 55%),var(--panel)}
+  .arch-badge{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--green);border:1px solid var(--green-dim);border-radius:6px;padding:3px 10px;background:rgba(74,222,128,.07)}
+  .arch-card{margin-top:40px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .arch-head{display:flex;gap:14px;align-items:center}
+  .arch-ico{width:40px;height:40px;border-radius:11px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:grid;place-items:center;font-size:17px}
+  .arch-head h3{font-family:var(--serif);font-size:22px;font-weight:400}
+  .arch-head .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase}
+  .arch-card p{color:var(--mut);font-size:14px;margin-top:12px}
+  .arch-links{display:flex;gap:22px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12.5px;color:var(--mut)}
 
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;transition:transform .15s,border-color .15s}
-  a.card:hover{transform:translateY(-3px);border-color:var(--acc)}
-  .card .tag{font-family:var(--mono);font-size:11px;color:var(--acc2);text-transform:uppercase;letter-spacing:.1em}
-  .card h3{font-family:var(--disp);font-size:18px;margin:10px 0 8px}
-  .card p{font-size:14px;color:var(--mut)}
+  /* impact (in place of testimonials) */
+  .imp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:22px}
+  .imp{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .imp .v{font-family:var(--serif);font-size:38px;color:var(--text)}
+  .imp .v em{color:var(--green);font-style:normal}
+  .imp p{color:var(--mut);font-size:12.5px;margin-top:6px}
+  .quote-mark{position:absolute;top:18px;right:26px;font-family:var(--serif);font-size:80px;line-height:.6;color:#232823}
 
-  .job{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
-  .job:first-of-type{border-top:none}
-  .job .when{font-family:var(--mono);font-size:13px;color:var(--dim);padding-top:4px}
-  .job h3{font-family:var(--disp);font-size:20px}
-  .job .co{color:var(--acc2);font-size:14px;margin-top:2px}
-  .job ul{margin:14px 0 0 18px;color:var(--mut);font-size:15px}
-  .job li{margin-bottom:9px}
-  .job li b{color:var(--text);font-weight:600}
+  /* building */
+  .b-head{display:flex;justify-content:space-between;align-items:center}
+  .prog{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:#e0b7a5;border:1px solid rgba(217,119,87,.3);background:rgba(217,119,87,.1);border-radius:99px;padding:3px 11px}
+  .prog i{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite}
+  .b-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+  .b-card{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel2);position:relative}
+  .b-card:hover{border-color:var(--line2)}
+  .b-grad{height:70px;background:radial-gradient(120% 200% at 50% 0%,rgba(217,119,87,.2),rgba(22,25,23,0))}
+  .b-body{padding:0 18px 18px;margin-top:-26px}
+  .b-ico{width:38px;height:38px;border-radius:10px;background:#241b16;border:1px solid rgba(217,119,87,.35);display:grid;place-items:center;font-size:16px}
+  .b-body h3{font-size:14.5px;font-weight:600;margin-top:12px}
+  .b-body p{color:var(--mut);font-size:13px;margin-top:5px}
+  .b-card .ext{position:absolute;top:14px;right:14px;color:var(--dim);font-size:13px}
 
-  .oss{border-top:1px solid var(--line)}
-  .oss-row{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
-  .oss-row .repo{font-family:var(--mono);font-size:14px;color:var(--acc2)}
-  .oss-row .repo:hover{text-decoration:underline}
-  .oss-row .what{color:var(--mut);font-size:14px;flex:1;min-width:240px}
-  .archive{margin-top:26px;display:block;background:linear-gradient(120deg,rgba(124,242,156,.08),rgba(110,168,254,.08));border:1px solid var(--line2);border-radius:16px;padding:24px}
-  .archive:hover{border-color:var(--acc)}
-  .archive h3{font-family:var(--disp);font-size:18px}
-  .archive p{color:var(--mut);font-size:14px;margin-top:6px}
+  /* projects + oss writing */
+  .split{display:grid;grid-template-columns:1fr 1.15fr;gap:16px}
+  .list{margin-top:16px}
+  .li{display:flex;gap:13px;padding:15px 4px;border-bottom:1px solid var(--line);position:relative}
+  .li:last-child{border-bottom:none}
+  .li:hover{background:var(--panel2);border-radius:10px}
+  .li-ico{width:34px;height:34px;flex:none;border-radius:9px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);display:grid;place-items:center;font-size:14px;color:var(--green)}
+  .li h3{font-size:14px;font-weight:600}
+  .li p{color:var(--mut);font-size:13px;margin-top:3px}
+  .li .ext{position:absolute;top:14px;right:8px;color:var(--dim);font-size:12px}
+  .viewall{position:absolute;top:26px;right:26px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
+  .viewall:hover{color:var(--green)}
+  .li-ico.amber{background:rgba(217,119,87,.09);border-color:rgba(217,119,87,.25);color:var(--amber)}
 
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-  .chip{font-family:var(--mono);font-size:12.5px;color:var(--mut);border:1px solid var(--line2);border-radius:99px;padding:5px 13px}
-  .skill-row{margin-bottom:20px}
-  .skill-row .lbl{font-family:var(--mono);font-size:12px;color:var(--acc);text-transform:uppercase;letter-spacing:.1em}
+  footer{grid-column:1/-1;text-align:center;color:var(--dim);font-family:var(--mono);font-size:12px;padding:20px 0 10px}
 
-  footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:90px 0 70px;text-align:center}
-  footer .big{font-family:var(--disp);font-size:clamp(30px,5vw,48px);letter-spacing:-.02em}
-  footer .big em{color:var(--acc);font-style:normal}
-  footer p{color:var(--mut);margin-top:14px}
-  footer .cta{justify-content:center}
-  footer .fine{margin-top:56px;color:var(--dim);font-size:13px;font-family:var(--mono)}
-
-  @media(max-width:760px){
-    .hero{grid-template-columns:1fr}
-    .portrait{justify-self:start;order:-1}
-    .job{grid-template-columns:1fr;gap:8px}
-    nav ul{gap:16px}
+  @media(max-width:900px){
+    .layout{grid-template-columns:1fr}
+    aside{position:relative;top:0;height:auto;min-height:0}
+    .art{display:none}
+    .leds{margin-top:26px;margin-bottom:20px}
+    .split,.b-grid{grid-template-columns:1fr}
+    .hl-grid{grid-template-columns:1fr}
+    .hl:nth-child(odd){border-right:none}
+    .hl:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+    .hl:last-child{border-bottom:none}
   }
 </style>
 </head>
 <body>
-<div class="glyphs" aria-hidden="true">
-  <span style="top:12%;left:6%">λ</span>
-  <span style="top:24%;right:8%">∞</span>
-  <span style="top:58%;left:4%">⊕</span>
-  <span style="top:74%;right:6%">→</span>
-  <span style="top:42%;right:16%">≡</span>
-  <span style="top:88%;left:14%">⟺</span>
-</div>
+<div class="layout">
 
-<nav><div class="wrap">
-  <a class="logo" href="#top">basit<em>.</em>hasan</a>
-  <ul>
-    <li><a href="#highlights">Highlights</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#oss">Open Source</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</div></nav>
-
-<header id="top"><div class="wrap hero">
-  <div>
-    <div class="kick">// platform engineering · site reliability</div>
-    <h1>Basit</h1>
+  <aside>
+    <div class="side-top">
+      <div class="name">Basit</div>
+      <div class="moon">🌙</div>
+    </div>
     <div class="role">Engineer <a href="https://obmondo.com" target="_blank" rel="noopener">@Obmondo</a></div>
-    <p class="lede">I run the Go services behind managed Kubernetes and Linux infrastructure for European enterprises, and lead the <b>7-engineer team</b> that builds them.</p>
-    <p class="lede" style="font-size:15px">APIs that bill real money. Automation that patches real fleets. Agents that live in customer clusters.</p>
-    <div class="cta">
-      <a class="btn primary" href="mailto:hasanbasit13@gmail.com">Get in touch</a>
-      <a class="btn" href="basit-hasan-resume.pdf">Résumé</a>
-      <a class="btn" href="https://github.com/basit9958" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/basit-hasan/" target="_blank" rel="noopener">LinkedIn</a>
+    <p class="desc">Running managed Kubernetes &amp; Linux infrastructure. Leading the 7-engineer platform team.</p>
+    <p class="desc2">Go services, billing pipelines, fleet automation, in-cluster agents.</p>
+    <div class="touch">
+      <h3>Get in touch</h3>
+      <p>Prefer email? Opens your default mail client.</p>
+      <div class="icons">
+        <a href="mailto:hasanbasit13@gmail.com" title="Email">✉</a>
+        <a href="https://github.com/basit9958" target="_blank" rel="noopener" title="GitHub">⌥</a>
+        <a href="https://twitter.com/basitwt" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+        <a href="https://www.linkedin.com/in/basit-hasan/" target="_blank" rel="noopener" title="LinkedIn">in</a>
+      </div>
     </div>
-  </div>
-  <div class="portrait"><img src="https://avatars.githubusercontent.com/u/83411217?v=4" alt="Basit Hasan"></div>
-</div></header>
+    <div class="leds">
+      <i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i>
+    </div>
+    <div class="art" aria-hidden="true">
+      <span style="top:18%;left:22%">λ</span>
+      <span style="top:36%;left:58%">⊕</span>
+      <span style="top:52%;left:30%">↯</span>
+      <span style="top:64%;left:66%">{}</span>
+      <span style="top:78%;left:42%">∿</span>
+      <span style="top:30%;left:80%">→</span>
+      <span style="top:70%;left:14%">λ</span>
+    </div>
+    <div class="side-foot">
+      <span>Build boring, ship reliable.</span>
+      <img src="https://avatars.githubusercontent.com/u/83411217?v=4" alt="Basit Hasan">
+    </div>
+  </aside>
 
-<div class="numbers"><div class="wrap">
-  <div class="num"><div class="v">1,100+</div><div class="k">commits on the company's core API. #1 contributor, 4x the next engineer</div></div>
-  <div class="num"><div class="v">180+</div><div class="k">production REST endpoints owned across 20+ business domains</div></div>
-  <div class="num"><div class="v">40+</div><div class="k">automated jobs replacing manual ops work, every day</div></div>
-  <div class="num"><div class="v">7</div><div class="k">engineers led on architecture, reviews, and delivery</div></div>
-</div></div>
+  <main>
 
-<section id="highlights"><div class="wrap">
-  <div class="sec-label">01 / highlights</div>
-  <h2>Proof, not promises</h2>
-  <div class="cards">
-    <a class="card" href="https://summerofcode.withgoogle.com/archive/2022/organizations/cncf" target="_blank" rel="noopener">
-      <span class="tag">CNCF · GSoC 2022</span>
-      <h3>Chaos Mesh, bare metal</h3>
-      <p>Selected for an advanced Google Summer of Code project. Packed kube-apiserver, controller-manager, and Chaos Mesh controllers into one static Go binary so chaos experiments run without a cluster. Mentored by PingCAP.</p>
+    <!-- hero card -->
+    <a class="panel hero" href="https://github.com/basit9958" target="_blank" rel="noopener">
+      <span class="goarr">↗</span>
+      <span class="badge"><i></i>SHIPPING</span>
+      <div class="hero-head">
+        <div class="hero-ico">⚙</div>
+        <div class="hero-meta">OBMONDO<small>Copenhagen, Denmark · remote</small></div>
+      </div>
+      <h2>The API That Runs the Business</h2>
+      <p class="sub">Owning the Go backend behind every customer: billing, server fleets, clusters, notifications, access control.</p>
+      <div class="when">
+        <span>📅 <b>Jul 2023 - now</b></span>
+        <span>·</span>
+        <span>1,100+ commits, #1 contributor</span>
+        <span>·</span>
+        <span>180+ endpoints</span>
+      </div>
+      <div class="track">Track: <a>Go</a>, <a>gRPC</a>, <a>PostgreSQL</a>, <a>Kubernetes</a></div>
     </a>
-    <a class="card" href="https://github.com/Obmondo/KubeAid" target="_blank" rel="noopener">
-      <span class="tag">Maintainer</span>
-      <h3>KubeAid</h3>
-      <p>Maintainer of Obmondo's open-source, Argo CD-based Kubernetes platform used to run production clusters for enterprise customers.</p>
+
+    <!-- highlights -->
+    <div class="panel">
+      <div class="plabel green">Highlights</div>
+      <div class="hl-grid">
+        <a class="hl" href="https://github.com/chaos-mesh/chaos-mesh" target="_blank" rel="noopener">
+          <span class="ext">↗</span>
+          <div class="hl-top"><div class="hl-ico">🚀</div><div><h3>GSoC '22 Chaos Mesh</h3><div class="vd">View details</div></div></div>
+          <p>Chaos engineering on bare metal: kube-apiserver, controller-manager, and Chaos Mesh controllers in one static Go binary. Mentored by PingCAP.</p>
+          <div class="chips"><span class="chip">GSoC</span><span class="chip">CNCF</span></div>
+        </a>
+        <a class="hl" href="https://github.com/Obmondo/KubeAid" target="_blank" rel="noopener">
+          <span class="ext">↗</span>
+          <div class="hl-top"><div class="hl-ico">⎈</div><div><h3>KubeAid Maintainer</h3><div class="vd">View details</div></div></div>
+          <p>Maintainer of the open-source, Argo CD-based Kubernetes platform running production clusters for enterprise customers.</p>
+          <div class="chips"><span class="chip">OSS</span><span class="chip">Maintainer</span></div>
+        </a>
+        <div class="hl">
+          <div class="hl-top"><div class="hl-ico">🗓</div><div><h3>Service Windows</h3><div class="vd">View details</div></div></div>
+          <p>Killed manual maintenance scheduling: auto-booked patch windows, reminders, reboot orchestration, and auto-close across entire fleets.</p>
+          <div class="chips"><span class="chip">Platform</span><span class="chip">Automation</span></div>
+        </div>
+        <div class="hl">
+          <div class="hl-top"><div class="hl-ico">💸</div><div><h3>Billing Pipeline</h3><div class="vd">View details</div></div></div>
+          <p>The pipeline that invoices every consulting hour: hourly slicing, reconciliation, live projections. Wrong numbers cost money. Mine reconcile.</p>
+          <div class="chips"><span class="chip">Go</span><span class="chip">Postgres</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- archive -->
+    <a class="panel archive" href="https://github.com/search?q=is%3Apr+author%3Abasit9958+is%3Amerged&type=pullrequests" target="_blank" rel="noopener">
+      <span class="goarr">↗</span>
+      <span class="arch-badge">ARCHIVE</span>
+      <div class="arch-card">
+        <div class="arch-head">
+          <div class="arch-ico">📄</div>
+          <div><h3>Work Log</h3><div class="k">Open source journey</div></div>
+        </div>
+        <p>A complete history of my open source contributions, PRs, and technical journey.</p>
+        <div class="arch-links"><span>⑂ PRs &amp; Issues</span><span>▤ Project Logs</span></div>
+      </div>
     </a>
-    <div class="card">
-      <span class="tag">Ownership</span>
-      <h3>The API that runs the business</h3>
-      <p>Architect and lead maintainer of Obmondo API. Billing, server fleets, clusters, notifications, and access control all pass through code I own.</p>
+
+    <!-- impact -->
+    <div class="panel">
+      <span class="quote-mark">”</span>
+      <div class="plabel amber">Impact</div>
+      <div class="imp-grid">
+        <div class="imp"><div class="v">1,100<em>+</em></div><p>commits on the core API. 4x the next contributor</p></div>
+        <div class="imp"><div class="v">180<em>+</em></div><p>production endpoints across 20+ business domains</p></div>
+        <div class="imp"><div class="v">40<em>+</em></div><p>automated jobs replacing daily manual ops</p></div>
+        <div class="imp"><div class="v">7</div><p>engineers led on architecture and delivery</p></div>
+      </div>
     </div>
-    <div class="card">
-      <span class="tag">Leadership</span>
-      <h3>Team of 7</h3>
-      <p>Promoted to lead the platform team after two years. I set the architecture, review the designs, and still ship more code than anyone.</p>
+
+    <!-- building -->
+    <div class="panel">
+      <div class="b-head">
+        <div class="plabel amber">Building</div>
+        <span class="prog"><i></i>IN PROGRESS</span>
+      </div>
+      <div class="b-grid">
+        <a class="b-card" href="https://github.com/Obmondo" target="_blank" rel="noopener">
+          <span class="ext">↗</span>
+          <div class="b-grad"></div>
+          <div class="b-body"><div class="b-ico">🛠</div><h3>kubeaid-agent</h3><p>In-cluster agent: node accounting, EOL tracking, Argo CD sync.</p></div>
+        </a>
+        <a class="b-card" href="https://github.com/basit9958" target="_blank" rel="noopener">
+          <span class="ext">↗</span>
+          <div class="b-grad"></div>
+          <div class="b-body"><div class="b-ico">📈</div><h3>DOT</h3><p>Prediction-markets analytics. Go backend, TypeScript SDK.</p></div>
+        </a>
+      </div>
     </div>
-  </div>
-</div></section>
 
-<section id="work"><div class="wrap">
-  <div class="sec-label">02 / work</div>
-  <h2>Where I've worked</h2>
-
-  <div class="job">
-    <div class="when">Aug 2025 · now</div>
-    <div>
-      <h3>Software Engineer 2 (SRE)</h3>
-      <div class="co">Obmondo · Copenhagen, Denmark · remote</div>
-      <ul>
-        <li>Run a <b>7-engineer platform team</b>: architecture, design reviews, delivery. Still the top committer.</li>
-        <li>Own <b>Obmondo API</b>, the Go backend everything depends on: 180+ endpoints, gRPC services, PostgreSQL, Redis Cluster, async job queues, 40+ scheduled jobs.</li>
-        <li>Killed manual maintenance scheduling. My <b>service-window subsystem</b> auto-books patch windows, sends reminders, orchestrates reboots, and closes the loop across entire customer fleets.</li>
-        <li>Built the <b>billing pipeline</b> that invoices every consulting hour: hourly slicing, invoice reconciliation, live projections. Wrong numbers here cost real money. Mine reconcile.</li>
-        <li>Architected <b>kubeaid-agent</b>, the agent running inside customer Kubernetes clusters: node accounting, EOL tracking, service-window-aware Argo CD sync.</li>
-      </ul>
+    <!-- projects + open source -->
+    <div class="split">
+      <div class="panel">
+        <div class="plabel amber">Projects</div>
+        <div class="list">
+          <a class="li" href="https://github.com/basit9958/configmap-operator" target="_blank" rel="noopener">
+            <div class="li-ico">⎔</div><div><h3>ConfigMap Operator</h3><p>Cluster-scoped ConfigMaps, reconciled everywhere.</p></div><span class="ext">↗</span>
+          </a>
+          <a class="li" href="https://github.com/basit9958/shorturl" target="_blank" rel="noopener">
+            <div class="li-ico">⚡</div><div><h3>shorturl</h3><p>High-throughput Go URL shortener on Redis.</p></div><span class="ext">↗</span>
+          </a>
+          <a class="li" href="https://github.com/basit9958" target="_blank" rel="noopener">
+            <div class="li-ico">🔔</div><div><h3>go-opsmondo</h3><p>Prometheus alerts to Gitea issues and Mattermost.</p></div><span class="ext">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="plabel amber">Open Source</div>
+        <a class="viewall" href="https://github.com/search?q=is%3Apr+author%3Abasit9958+is%3Amerged&type=pullrequests" target="_blank" rel="noopener">View all →</a>
+        <div class="list">
+          <a class="li" href="https://github.com/chaos-mesh/chaos-mesh" target="_blank" rel="noopener">
+            <div class="li-ico amber">☄</div><div><h3>chaos-mesh</h3><p>NetworkChaos device-field mutation webhook.</p></div><span class="ext">↗</span>
+          </a>
+          <a class="li" href="https://github.com/kubedl-io/kubedl" target="_blank" rel="noopener">
+            <div class="li-ico amber">⛵</div><div><h3>kubedl</h3><p>Helm CI validation; git-sync &amp; host-network to spec fields.</p></div><span class="ext">↗</span>
+          </a>
+          <a class="li" href="https://github.com/knative-extensions/eventing-kafka-broker" target="_blank" rel="noopener">
+            <div class="li-ico amber">⇶</div><div><h3>knative eventing</h3><p>Broker-config status stashing; KafkaSource CRD.</p></div><span class="ext">↗</span>
+          </a>
+          <a class="li" href="https://github.com/bitnami/charts" target="_blank" rel="noopener">
+            <div class="li-ico amber">▲</div><div><h3>bitnami/charts</h3><p>RabbitMQ cluster-operator metrics endpoint.</p></div><span class="ext">↗</span>
+          </a>
+          <a class="li" href="https://github.com/kubescape/k8s-interface" target="_blank" rel="noopener">
+            <div class="li-ico amber">🛡</div><div><h3>kubescape</h3><p>Roles and service-account retrieval APIs.</p></div><span class="ext">↗</span>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="job">
-    <div class="when">Jul 2023 · Jul 2025</div>
-    <div>
-      <h3>Software Engineer (SRE)</h3>
-      <div class="co">Obmondo · Copenhagen, Denmark · remote</div>
-      <ul>
-        <li>Built <b>go-opsmondo</b>: turned Prometheus alert noise into Gitea issues and Mattermost pings, with digests and metrics. On-call finally saw signal, not spam.</li>
-        <li>Shipped the <b>CVE pipeline</b> end to end: every server scanned by vuls, every finding queryable per customer.</li>
-        <li>Delivered features across notifications, server lifecycle, invoicing, Puppet facts, and Grafana integration.</li>
-        <li>Carried the pager: production incidents, RCAs, fixes that stayed fixed.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="job">
-    <div class="when">May · Nov 2022</div>
-    <div>
-      <h3>GSoC 2022, Chaos Mesh</h3>
-      <div class="co">CNCF · mentored by PingCAP</div>
-      <ul>
-        <li>PhysicalMachineChaos as a single static binary. Chaos engineering on machines that never had a cluster.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="job">
-    <div class="when">Jul · Oct 2022</div>
-    <div>
-      <h3>Junior Developer Evangelist</h3>
-      <div class="co">Merico · Apache DevLake (Incubating)</div>
-      <ul>
-        <li>Early contributor: docs, tutorials, onboarding new contributors into an Apache incubating project.</li>
-      </ul>
-    </div>
-  </div>
-</div></section>
-
-<section id="oss"><div class="wrap">
-  <div class="sec-label">03 / open source</div>
-  <h2>Merged upstream</h2>
-  <div class="oss">
-    <div class="oss-row"><a class="repo" href="https://github.com/chaos-mesh/chaos-mesh" target="_blank" rel="noopener">chaos-mesh/chaos-mesh</a><span class="what">NetworkChaos device-field mutation webhook, plus the GSoC PhysicalMachineChaos artifact</span></div>
-    <div class="oss-row"><a class="repo" href="https://github.com/Obmondo/KubeAid" target="_blank" rel="noopener">Obmondo/KubeAid</a><span class="what">Maintainer. Argo CD-based Kubernetes platform, open source</span></div>
-    <div class="oss-row"><a class="repo" href="https://github.com/kubedl-io/kubedl" target="_blank" rel="noopener">kubedl-io/kubedl</a><span class="what">Helm-chart CI validation; git-sync and host-network promoted from annotations to spec fields</span></div>
-    <div class="oss-row"><a class="repo" href="https://github.com/knative-extensions/eventing-kafka-broker" target="_blank" rel="noopener">knative/eventing-kafka-broker</a><span class="what">Broker-config status stashing; KafkaSource CRD update</span></div>
-    <div class="oss-row"><a class="repo" href="https://github.com/bitnami/charts" target="_blank" rel="noopener">bitnami/charts</a><span class="what">Metrics endpoint support for the RabbitMQ cluster operator</span></div>
-    <div class="oss-row"><a class="repo" href="https://github.com/kubescape/k8s-interface" target="_blank" rel="noopener">kubescape/k8s-interface</a><span class="what">Roles and service-account retrieval APIs</span></div>
-    <div class="oss-row"><a class="repo" href="https://github.com/basit9958/configmap-operator" target="_blank" rel="noopener">basit9958/configmap-operator</a><span class="what">Kubernetes operator reconciling cluster-scoped ConfigMaps into namespaces</span></div>
-  </div>
-  <a class="archive" href="https://github.com/search?q=is%3Apr+author%3Abasit9958+is%3Amerged&type=pullrequests" target="_blank" rel="noopener">
-    <h3>Archive · Open Source Journey ↗</h3>
-    <p>The full history: every merged PR, issue, and contribution across CNCF and beyond.</p>
-  </a>
-</div></section>
-
-<section id="skills"><div class="wrap">
-  <div class="sec-label">04 / skills</div>
-  <h2>Tools of the trade</h2>
-  <div class="skill-row"><span class="lbl">Languages</span><div class="chips"><span class="chip">Go</span><span class="chip">SQL / PL/pgSQL</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">C / C++</span></div></div>
-  <div class="skill-row"><span class="lbl">Backend</span><div class="chips"><span class="chip">Gin</span><span class="chip">gRPC / Protobuf</span><span class="chip">REST</span><span class="chip">sqlc</span><span class="chip">async job queues</span><span class="chip">JWT / TOTP</span><span class="chip">OpenAPI</span></div></div>
-  <div class="skill-row"><span class="lbl">Data</span><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">partitioning</span><span class="chip">migrations</span><span class="chip">Redis Cluster</span></div></div>
-  <div class="skill-row"><span class="lbl">Infrastructure</span><div class="chips"><span class="chip">Kubernetes</span><span class="chip">Argo CD</span><span class="chip">Docker</span><span class="chip">Helm</span><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">Alertmanager</span><span class="chip">Puppet</span><span class="chip">Terraform</span></div></div>
-  <div class="skill-row"><span class="lbl">Practices</span><div class="chips"><span class="chip">GitOps</span><span class="chip">CI/CD</span><span class="chip">incident response</span><span class="chip">chaos engineering</span><span class="chip">team leadership</span></div></div>
-</div></section>
-
-<footer id="contact"><div class="wrap">
-  <div class="big">Build boring. Ship <em>reliable</em>.</div>
-  <p>Open to SDE-2 and Forward Deployed Engineer roles. Email gets the fastest reply.</p>
-  <div class="cta">
-    <a class="btn primary" href="mailto:hasanbasit13@gmail.com">hasanbasit13@gmail.com</a>
-    <a class="btn" href="https://github.com/basit9958" target="_blank" rel="noopener">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/basit-hasan/" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://twitter.com/basitwt" target="_blank" rel="noopener">Twitter</a>
-  </div>
-  <div class="fine">© 2026 Basit Hasan · Delhi, India · zero frameworks, one HTML file</div>
-</div></footer>
+    <footer>© 2026 Basit Hasan · Delhi, India</footer>
+  </main>
+</div>
 </body>
 </html>
