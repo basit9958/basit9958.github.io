@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basit Hasan — Software Engineer (SRE) | Go, Kubernetes, Platform Engineering</title>
+<meta name="description" content="Basit Hasan — Software Engineer 2 (SRE) at Obmondo. I architect and run the Go services behind managed Kubernetes & Linux infrastructure for European enterprises. CNCF contributor, GSoC 2022 (Chaos Mesh), KubeAid maintainer.">
+<meta name="author" content="Basit Hasan">
+<meta property="og:title" content="Basit Hasan — Software Engineer (SRE)">
+<meta property="og:description" content="Platform engineer building production Go services and Kubernetes systems. Team lead at Obmondo, CNCF contributor.">
+<meta property="og:type" content="profile">
+<style>
+  :root{
+    --bg:#0a0c10; --bg2:#11141b; --card:#141822; --line:#232a38;
+    --text:#e8ecf3; --mut:#9aa6b8; --dim:#6b7688;
+    --acc:#4ade80; --acc2:#38bdf8;
+    --mono:'SFMono-Regular',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--acc2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:9;background:rgba(10,12,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .logo{font-family:var(--mono);color:var(--acc);font-weight:700}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav a{color:var(--mut);font-size:14px}
+  nav a:hover{color:var(--text);text-decoration:none}
+  header{padding:96px 0 72px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse 60% 50% at 70% 10%,rgba(56,189,248,.07),transparent),radial-gradient(ellipse 50% 40% at 20% 90%,rgba(74,222,128,.05),transparent)}
+  .kicker{font-family:var(--mono);color:var(--acc);font-size:14px;margin-bottom:14px}
+  h1{font-size:clamp(38px,6vw,58px);line-height:1.08;letter-spacing:-.02em}
+  .sub{font-size:clamp(17px,2.4vw,21px);color:var(--mut);margin:18px 0 8px;max-width:640px}
+  .sub b{color:var(--text);font-weight:600}
+  .hero-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:8px;color:var(--text);font-size:14px;background:var(--card)}
+  .btn:hover{border-color:var(--acc);text-decoration:none;transform:translateY(-1px)}
+  .btn.primary{background:var(--acc);color:#06240f;border-color:var(--acc);font-weight:600}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:22px;margin-bottom:28px;display:flex;align-items:center;gap:12px}
+  h2 .h{font-family:var(--mono);color:var(--acc);font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .card:hover{border-color:#31405a}
+  .card h3{font-size:16px;margin-bottom:8px}
+  .card p{font-size:14px;color:var(--mut)}
+  .card .tag{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--acc);margin-top:12px;margin-right:8px}
+  .job{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+  .job:first-of-type{border-top:none}
+  .job .when{font-family:var(--mono);font-size:13px;color:var(--dim);padding-top:3px}
+  .job h3{font-size:17px}
+  .job .co{color:var(--acc2);font-size:14px}
+  .job ul{margin:10px 0 0 18px;color:var(--mut);font-size:14.5px}
+  .job li{margin-bottom:7px}
+  .job li b{color:var(--text);font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:var(--mono);font-size:12.5px;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:5px 12px;background:var(--bg2)}
+  .skill-group{margin-bottom:18px}
+  .skill-group .lbl{font-family:var(--mono);font-size:12px;color:var(--acc);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:30px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+  .stat .n{font-size:26px;font-weight:700;color:var(--acc);font-family:var(--mono)}
+  .stat .l{font-size:12px;color:var(--dim);margin-top:4px}
+  footer{padding:56px 0;color:var(--dim);font-size:14px}
+  footer .big{font-size:clamp(24px,4vw,34px);color:var(--text);font-weight:700;margin-bottom:12px}
+  .oss-item{padding:14px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+  .oss-item:first-of-type{border-top:none}
+  .oss-item .repo{font-family:var(--mono);font-size:14px}
+  .oss-item .what{color:var(--mut);font-size:14px;flex:1;min-width:220px}
+  @media(max-width:640px){.job{grid-template-columns:1fr;gap:6px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <span class="logo">basit@obmondo:~$</span>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#shipped">Shipped</a></li>
+    <li><a href="#oss">Open Source</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="kicker">// software engineer · site reliability · platform</div>
+  <h1>Basit Hasan</h1>
+  <p class="sub">Software Engineer 2 (SRE) at <b>Obmondo</b>. I architect and run the Go services behind managed Kubernetes &amp; Linux infrastructure for European enterprises — and lead the 7-engineer team that builds them.</p>
+  <p class="sub" style="font-size:15px">CNCF contributor · GSoC 2022 (Chaos Mesh) · KubeAid maintainer</p>
+  <div class="hero-links">
+    <a class="btn primary" href="basit-hasan-resume.pdf">Download Résumé</a>
+    <a class="btn" href="https://github.com/basit9958" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/basit-hasan/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://twitter.com/basitwt" target="_blank" rel="noopener">Twitter</a>
+    <a class="btn" href="mailto:hasanbasit13@gmail.com">Email</a>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><div class="n">1,100+</div><div class="l">commits to Obmondo API</div></div>
+    <div class="stat"><div class="n">180+</div><div class="l">REST endpoints owned</div></div>
+    <div class="stat"><div class="n">7</div><div class="l">engineers led</div></div>
+    <div class="stat"><div class="n">3 yrs</div><div class="l">production Go &amp; K8s</div></div>
+  </div>
+</div></header>
+
+<section id="work"><div class="wrap">
+  <h2><span class="h">01.</span> Where I've Worked</h2>
+
+  <div class="job">
+    <div class="when">Aug 2025 — now</div>
+    <div>
+      <h3>Software Engineer 2 (SRE)</h3>
+      <div class="co">Obmondo · Copenhagen, Denmark (remote)</div>
+      <ul>
+        <li>Lead a team of 7 engineers; own architecture, design reviews, and delivery of Obmondo's core platform software.</li>
+        <li>Architect and lead maintainer of <b>Obmondo API</b> — Go (Gin) + gRPC, 180+ endpoints across 20+ domains, PostgreSQL, Redis Cluster, async job queues, 40+ scheduled jobs.</li>
+        <li>Designed the <b>service-window subsystem</b>: automated maintenance booking, reminders, auto-close, and reboot orchestration for customer server fleets.</li>
+        <li>Built the <b>metered-billing pipeline</b> — time-registration slicing, invoice reconciliation, month-to-date projections.</li>
+        <li>Architected <b>kubeaid-agent</b>: in-cluster agent for node accounting, K8s EOL/EOS tracking, service-window-aware Argo CD sync, PuppetDB facts sync.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Jul 2023 — Jul 2025</div>
+    <div>
+      <h3>Software Engineer (SRE)</h3>
+      <div class="co">Obmondo · Copenhagen, Denmark (remote)</div>
+      <ul>
+        <li>Built <b>go-opsmondo</b>: alert-handling daemon bridging Prometheus Alertmanager to Gitea issues and Mattermost, with digests and metrics.</li>
+        <li>Shipped the fleet-wide <b>CVE reporting pipeline</b> (vuls scanner → API → cached reports).</li>
+        <li>Delivered platform features across notifications, server lifecycle, invoicing, Puppet facts, and Grafana integration.</li>
+        <li>Maintainer of <b>KubeAid</b>; on-call rotations, incident response, RCAs.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">May — Nov 2022</div>
+    <div>
+      <h3>GSoC 2022 — Chaos Mesh</h3>
+      <div class="co">CNCF · mentored by PingCAP</div>
+      <ul>
+        <li>Built <b>PhysicalMachineChaos</b> as a single static Go binary embedding kube-apiserver + controller-manager with Chaos Mesh controllers — chaos engineering on bare metal, no cluster required.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Jul — Oct 2022</div>
+    <div>
+      <h3>Junior Developer Evangelist</h3>
+      <div class="co">Merico · Apache DevLake (Incubating)</div>
+      <ul>
+        <li>Early contributor and evangelist: docs, tutorials, contributor onboarding, community outreach.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="shipped"><div class="wrap">
+  <h2><span class="h">02.</span> Systems I've Shipped</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Obmondo API</h3>
+      <p>The core backend of a managed-infrastructure company: ~225K LOC of Go serving customers' servers, clusters, billing, notifications, and access control. #1 contributor since 2023.</p>
+      <span class="tag">Go</span><span class="tag">Gin</span><span class="tag">gRPC</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span>
+    </div>
+    <div class="card">
+      <h3>Service Windows</h3>
+      <p>Fleet maintenance as code: customers book patch/reboot windows; the system auto-books, reminds, orchestrates reboots, and closes the loop. Runs across the whole fleet.</p>
+      <span class="tag">scheduling</span><span class="tag">cron</span><span class="tag">automation</span>
+    </div>
+    <div class="card">
+      <h3>Billing Pipeline</h3>
+      <p>Hourly work-date time-registration slicing, invoice-period reconciliation, and live month-to-date billing projections — money-grade correctness, integrated with Gitea and finance systems.</p>
+      <span class="tag">PostgreSQL</span><span class="tag">gue queues</span><span class="tag">invoicing</span>
+    </div>
+    <div class="card">
+      <h3>kubeaid-agent</h3>
+      <p>In-cluster agent for customer Kubernetes clusters: Prometheus node accounting, version EOL/EOS tracking, service-window-aware Argo CD sync, PuppetDB facts sync.</p>
+      <span class="tag">Kubernetes</span><span class="tag">Argo CD</span><span class="tag">Prometheus</span>
+    </div>
+    <div class="card">
+      <h3>go-opsmondo</h3>
+      <p>Alert-handling daemon between Prometheus Alertmanager and humans: Gitea issues, Mattermost notifications, periodic digests, alert metrics.</p>
+      <span class="tag">Go</span><span class="tag">Alertmanager</span><span class="tag">on-call</span>
+    </div>
+    <div class="card">
+      <h3>CVE Pipeline</h3>
+      <p>Fleet-wide vulnerability visibility: vuls scanners report through a dedicated API into cached, queryable CVE dashboards per customer.</p>
+      <span class="tag">security</span><span class="tag">vuls</span><span class="tag">caching</span>
+    </div>
+  </div>
+</div></section>
+
+<section id="oss"><div class="wrap">
+  <h2><span class="h">03.</span> Open Source</h2>
+  <div class="oss-item"><a class="repo" href="https://github.com/chaos-mesh/chaos-mesh" target="_blank" rel="noopener">chaos-mesh/chaos-mesh</a><span class="what">NetworkChaos device-field mutation webhook; GSoC 2022 PhysicalMachineChaos artifact</span></div>
+  <div class="oss-item"><a class="repo" href="https://github.com/Obmondo/KubeAid" target="_blank" rel="noopener">Obmondo/KubeAid</a><span class="what">Maintainer — open-source Argo CD-based Kubernetes platform</span></div>
+  <div class="oss-item"><a class="repo" href="https://github.com/kubedl-io/kubedl" target="_blank" rel="noopener">kubedl-io/kubedl</a><span class="what">Helm-chart CI validation; git-sync &amp; host-network promoted from annotations to spec fields</span></div>
+  <div class="oss-item"><a class="repo" href="https://github.com/knative-extensions/eventing-kafka-broker" target="_blank" rel="noopener">knative/eventing-kafka-broker</a><span class="what">Broker-config status stashing; KafkaSource CRD update</span></div>
+  <div class="oss-item"><a class="repo" href="https://github.com/bitnami/charts" target="_blank" rel="noopener">bitnami/charts</a><span class="what">RabbitMQ cluster-operator metrics endpoint support</span></div>
+  <div class="oss-item"><a class="repo" href="https://github.com/kubescape/k8s-interface" target="_blank" rel="noopener">kubescape/k8s-interface</a><span class="what">Roles &amp; service-account retrieval APIs</span></div>
+  <div class="oss-item"><a class="repo" href="https://github.com/basit9958/configmap-operator" target="_blank" rel="noopener">basit9958/configmap-operator</a><span class="what">Kubernetes operator reconciling cluster-scoped ConfigMaps into namespaces</span></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2><span class="h">04.</span> Tools of the Trade</h2>
+  <div class="skill-group"><div class="lbl">Languages</div><div class="chips"><span class="chip">Go</span><span class="chip">SQL / PL/pgSQL</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">C</span><span class="chip">C++</span></div></div>
+  <div class="skill-group"><div class="lbl">Backend</div><div class="chips"><span class="chip">Gin</span><span class="chip">gRPC / Protobuf</span><span class="chip">REST</span><span class="chip">sqlc</span><span class="chip">GORM</span><span class="chip">async job queues</span><span class="chip">JWT / TOTP</span><span class="chip">OpenAPI</span></div></div>
+  <div class="skill-group"><div class="lbl">Data</div><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">partitioning</span><span class="chip">migrations</span><span class="chip">Redis Cluster</span></div></div>
+  <div class="skill-group"><div class="lbl">Infrastructure</div><div class="chips"><span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">Argo CD</span><span class="chip">KubeAid</span><span class="chip">Helm</span><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">Alertmanager</span><span class="chip">Puppet</span><span class="chip">Terraform</span></div></div>
+  <div class="skill-group"><div class="lbl">Practices</div><div class="chips"><span class="chip">GitOps</span><span class="chip">CI/CD</span><span class="chip">on-call &amp; incident response</span><span class="chip">chaos engineering</span><span class="chip">code review</span><span class="chip">team leadership</span></div></div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <div class="big">Let's build something reliable.</div>
+  <p>Open to SDE-2 and Forward Deployed Engineer roles. The fastest way to reach me is email.</p>
+  <div class="hero-links" style="margin-top:20px">
+    <a class="btn primary" href="mailto:hasanbasit13@gmail.com">hasanbasit13@gmail.com</a>
+    <a class="btn" href="https://github.com/basit9958" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/basit-hasan/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <p style="margin-top:36px">© 2026 Basit Hasan · Delhi, India · Built with plain HTML — no framework needed.</p>
+</div></footer>
+</body>
+</html>
